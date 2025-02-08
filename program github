@@ -32,14 +32,14 @@ EOF
 
 # Konfigurasi Git global
 echo -e "\n\033[1;32m[4/8] Mengatur konfigurasi Git global...\033[0m"
-git config --global user.name "${USERNAME}"
-git config --global user.email "${EMAIL}"
+git config --global user.name "${theox443}"
+git config --global user.email "${theox443@gmail.com}"
 git config --global core.sshCommand "ssh -i ${GITHUB_SSH_KEY} -F /dev/null"
 
 # Membuat direktori proyek
 echo -e "\n\033[1;32m[5/8] Membuat direktori proyek...\033[0m"
 mkdir -p ${PROJECT_NAME}/{src,scripts,docs}
-cd ${PROJECT_NAME}
+cd ${my_projek}
 
 # Inisialisasi repositori Git
 echo -e "\n\033[1;32m[6/8] Inisialisasi repositori Git...\033[0m"
@@ -80,11 +80,11 @@ echo -e "\n\033[1;32m[8/8] Menginstall dependensi Python...\033[0m"
 pip3 install -r ${PYTHON_REQUIREMENTS}
 
 # Setup Go module
-go mod init github.com/${USERNAME}/${PROJECT_NAME}
+go mod init github.com/${theox443}/${my_projek}
 
 echo -e "\n\033[1;32mSetup selesai! \033[0m"
 echo -e "\033[1;33mSalin SSH public key berikut dan tambahkan ke GitHub:\033[0m"
 cat ${GITHUB_SSH_KEY}.pub
 chmod +x github_setup.sh
 ./github_setup.sh
-git remote add origin git@github.com:username/repo.git
+git remote add origin git@github.com: theox443/repo.git
